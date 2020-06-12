@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 import numpy as np
 
-
+#pip freeze > requirements.txt
 app=Flask(__name__)
 
 
@@ -30,5 +30,31 @@ def home():
 
 
 
+@app.route("/heart",methods=["GET","POST"])
+def heart():
+	if request.method=='GET':
+		return render_template('form1.html')
+	else:
+		ds=pd.read_csv('heart.csv')
+		X=ds.drop('target',axis=1)
+		y=ds.iloc[:,-1]
+		X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.25,random_state=0)
+		reg=LogisticRegression()
+		reg.fit(X_train,y_train)
+		Age=int(request.form['Age'])
+		gender=int(request.form['gender'])
+		cp=int(request.form['cp'])
+		trestbps=int(request.form['trestbps'])
+		chol=int(request.form['chol'])
+		fbs=int(request.form['fbs'])
+		restecg=int(request.form['restecg'])
+		thalach=int(request.form['thalach'])
+		y_pred=reg.predict([[Age,gender,cp,trestbps,chol,fbs,restecg,thalach,ds['exang'].mean(),ds['oldpeak'].mean(),ds['slope'].mean(),ds['ca'].mean(),ds['thal'].mean()]])
+		return render_template("result1.html",y_pred=y_pred)
+
+
+
+
+
 if __name__ == '__main__':
-	app.run(debug=True) 
+	app.run(debug=True)
