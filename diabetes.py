@@ -49,11 +49,9 @@ def heart():
 		fbs=int(request.form['fbs'])
 		restecg=int(request.form['restecg'])
 		thalach=int(request.form['thalach'])
-		y_pred=reg.predict([[Age,gender,cp,trestbps,chol,fbs,restecg,thalach,ds['exang'].mean(),ds['oldpeak'].mean(),ds['slope'].mean(),ds['ca'].mean(),ds['thal'].mean()]])
+		new=np.array([[Age,gender,cp,trestbps,chol,fbs,restecg,thalach,ds['exang'].mean(),ds['oldpeak'].mean(),ds['slope'].mean(),ds['ca'].mean(),ds['thal'].mean()]])
+		y_pred=reg.predict(new)
 		return render_template("result1.html",y_pred=y_pred)
-
-
-
 
 
 if __name__ == '__main__':
