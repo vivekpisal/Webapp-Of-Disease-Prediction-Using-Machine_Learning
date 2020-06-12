@@ -1,6 +1,7 @@
 {% extends 'base.html '%}
 
 {% block content %}
+
 <style type="text/css">
 .new{
     padding: 30px;
@@ -30,17 +31,17 @@ body {
 
 
 <section class="new" style="height: 30%;width: 100%;margin-top: 5%;">
-  <h2 style="margin-left: 40%;">Diabetes Prediction Webapp</h2>
-  <h5 style="margin-left: 37%;">A Machine Learning Algorithm That Predict Diabetes Patient</h5>
+  <h2 style="margin-left: 40%;">Heart Disease Webapp</h2>
+  <h5 style="margin-left: 37%;">A Machine Learning Algorithm That Predict Heart Disease Patient</h5>
 </section>
 
 <div style="margin-left: 40%;margin-top: 15%;">
 
 {% if y_pred==0 %}
-<h1 style="color: green;">Great You Don't have Diabetes</h1>
+<h1 style="color: green;">Great You Don't Heart Disease</h1>
 {% endif %}
 {% if y_pred==1 %}
-<h1 style="color: red;">You have Diabetes</h1>
+<h1 style="color: red;">You have Heart Disease</h1>
 {% endif %}
 
 </div>

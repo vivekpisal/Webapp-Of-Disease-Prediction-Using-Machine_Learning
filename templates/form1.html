@@ -1,0 +1,50 @@
+{% extends 'base.html '%}
+
+{% block content %}
+
+
+<section class="new" style="height: 30%;width: 100%; margin-top: 5%;">
+  <h2 style="margin-left: 40%;">Heart Disease Webapp</h2>
+  <h5 style="margin-left: 35%;">A Machine Learning Algorithm That Predict Heart Disease Patient</h5>
+</section>
+
+
+<form method="post" style="margin-left: 30%;margin-top: 5%;">
+	<br>
+
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Age" name="Age" required>
+  </div>
+
+  <div class="form-check">
+    Gender:
+  <input type="radio" name="gender" id="sex" value="1">Male
+  <input type="radio" name="gender" id="sex" value="0">Female  
+</div>
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Chest Pain Type (range: 0-3)" name="cp" required>
+  </div>
+
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Blood Pressure (range: 94-200)" name="trestbps" required>
+  </div>
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Cholestoral (range: 126-564) " name="chol" required>
+  </div>
+ <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Blood Sugar  (range: 0-1) " name="fbs" required>
+  </div>
+ <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Electrocardiographic results (values 0,1,2) " name="restecg" required>
+  </div>
+   <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Heart Rate (range: 71-202) " name="thalach" required>
+  </div>
+
+
+  </div>
+
+  <button type="submit" class="btn btn-outline-primary" style="margin-left:20%;height: 40px;width: 20%;">Predict</button>
+</form>
+
+{% endblock %}
