@@ -39,7 +39,7 @@ def heart():
 		X=ds.drop('target',axis=1)
 		y=ds.iloc[:,-1]
 		X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.25,random_state=0)
-		reg=LogisticRegression()
+		reg=LogisticRegression(max_iter=1200000)
 		reg.fit(X_train,y_train)
 		Age=int(request.form['Age'])
 		gender=int(request.form['gender'])
