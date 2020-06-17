@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+
+<section class="new" style="height: 30%;width: 100%;margin-top: 5%;">
+  <h2 style="margin-left: 40%;">Liver Disease Webapp</h2>
+  <h5 style="margin-left: 37%;">A Machine Learning Algorithm That Predict Liver Disease Patient</h5>
+</section>
+
+
+
+{% if y_pred==2 %}
+<div id="content">
+<h1 style="color: green;">Great You Don't Have Liver Disease</h1>
+  
+ 
+</div>
+<canvas id="canvas"></canvas>
+
+{% endif %}
+{% if y_pred==1 %}
+<h1 style="color: red;">You have Liver Disease</h1>
+{% endif %}
+
+
+
+{% endblock %}

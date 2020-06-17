@@ -1,48 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<style type="text/css">
-.new{
-    padding: 30px;
-	position: relative;
-	background: linear-gradient(45deg, #443B96, #F60B68, #F4483A);
-	background-size: 500% 500%;
-	animation: change-gradient 5s ease-in-out infinite;
-}
-@keyframes change-gradient {
-	0%{
-		background-position: 0 50%;
-	}
-	50%{
-		background-position: 100% 50%;
-	}
-	100%{
-		background-position: 0 50%;
-	}
-}
 
-body {
-  height: 100%;
-} 
 
 </style>
-
-
 
 <section class="new" style="height: 30%;width: 100%;margin-top: 5%;">
   <h2 style="margin-left: 40%;">Diabetes Prediction Webapp</h2>
   <h5 style="margin-left: 37%;">A Machine Learning Algorithm That Predict Diabetes Patient</h5>
 </section>
 
-<div style="margin-left: 40%;margin-top: 15%;">
+
 
 {% if y_pred==0 %}
-<h1 style="color: green;">Great You Don't have Diabetes</h1>
+
+<div id="content">
+  <h1 style="color: green;">You Don't have Diabetes</h1>
+ 
+</div>
+<canvas id="canvas"></canvas>
 {% endif %}
 {% if y_pred==1 %}
 <h1 style="color: red;">You have Diabetes</h1>
 {% endif %}
 
-</div>
+
 
 {% endblock %}
