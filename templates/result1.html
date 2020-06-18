@@ -29,9 +29,8 @@ body {
 
 </style>
 
-
-
-<section class="new" style="height: 30%;width: 100%;margin-top: 5%;">
+<section class="new" style="height: 30%;width: 100%;
+	margin-top:5%;">
   <h2 style="margin-left: 40%;">Heart Disease Webapp</h2>
   <h5 style="margin-left: 37%;">A Machine Learning Algorithm That Predict Heart Disease Patient</h5>
 </section>
@@ -39,16 +38,18 @@ body {
 
 
 {% if y_pred==0 %}
-	<div id="content">
-  <h1 style="color: green;">Great You Don't Heart Disease</h1>
- 
+
+<div id="content">
+  <h1 style="color: green;">Great You Don't Have Heart Disease
+  </h1> 
 </div>
 <canvas id="canvas"></canvas>
-	
-	
+		
 {% endif %}
 {% if y_pred==1 %}
+	
 	<h1 style="color: red;">You have Heart Disease</h1>
+
 {% endif %}
 
 
