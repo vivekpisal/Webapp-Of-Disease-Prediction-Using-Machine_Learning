@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+
+<section class="new" style="height: 30%;width: 100%; margin-top: 5%;">
+  <h2 style="margin-left: 40%;">Kidney Disease Webapp</h2>
+  <h5 style="margin-left: 35%;">A Machine Learning Algorithm That Predict Liver Disease Patient</h5>
+</section>
+
+
+<form method="post" style="margin-left: 15%;margin-top: 5%;">
+	<br>
+
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Age" name="Age" required>
+  </div>
+
+ <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Blood Pressure mm/Hg" name="Blood_Pressure" step=0.001 required>
+  </div>
+
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Specific Gravity (range: 1.005-1.025)" name="Specific_Gravity" step=0.001 required>
+  </div>
+
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Albumin (range: 60-2100)" name="Albumin" required>
+  </div>
+
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Sugar (range: 0-5) " name="Sugar" required>
+  </div>
+ <div class="form-group col-md-6">
+    
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Red Blood Cells  (range: 0-1) " name="Red_Blood_Cells" required>
+    <span>0:Normal 1:Abnormal</span>
+  </div>
+
+
+  </div>
+
+  <button type="submit" class="btn btn-outline-primary" style="margin-left:20%;height: 40px;width: 20%;">Predict</button>
+</form>
+
+{% endblock %}
