@@ -10,8 +10,8 @@ app=Flask(__name__)
 
 
 
-@app.route("/",methods=["GET","POST"])
-def home():
+@app.route("/diabetes",methods=["GET","POST"])
+def diabetes():
 	if request.method=='GET':
 		return render_template("form.html")
 	else:
@@ -102,6 +102,18 @@ def kidney():
 		new=np.array([[Age,Blood_Pressure,Specific_Gravity,Albumin,Sugar,Red_Blood_Cells]])
 		y_pred=model.predict(new)
 		return render_template('result3.html',y_pred=y_pred)
+
+
+
+@app.route('/about')
+def about():
+	return render_template('about.html')
+
+
+
+@app.route('/')
+def home():
+	return render_template('home.html')
 
 
 

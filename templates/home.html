@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<title>Home</title>
+
+
+</head>
+    <style>
+    #main-footer
+    {
+      color: #FFFFFF;
+      font-family: "Segoe UI";
+      background: #2B2B2B;
+      text-align: center;
+      margin-top: 108px;
+      padding: 16px;
+      bottom: 8px;
+    }</style>
+
+
+
+
+  <div class= "container">
+
+     <div class="col-md-8">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+        
+  </div>
+
+    <h3 style="margin-top: 10%;">Details </h3>
+    <p>Welcome to the home page of the app.</p>
+    <p>This is mainly based on as the application of the machine learning,meant to be employed in the remote and the downtrodden area.
+      <h3>Overview</h3>
+      In todays time we see a lot of the shortage of the doctors in the world especially in India.A lot of people are suffering a lot without the help of the proper medical checkup.Also most of the cases many cases arise leading to dealth due to lack of timely medical checkup<p>
+        <p>So to cope up with all of those problems this app is designed which would prove its benefits upto much extent.
+        </p>
+        <hr>
+    </p>
+    <h3>Application</h3>
+    <ul>
+      <li>To remove the dependencies on the doctors</li>
+      <li>To help out the poor and helpless people with the normal medical checkup</li>
+      <li>To help people avoid paying huge  amount to the doctors unnecessarily</li>
+      <li>To extend the role of the technology in the medical field</li>
+    </ul>
+    <h2>Creator :</h2>
+    <p>Vivek Pisal</p>
+
+
+  </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+<footer id="main-footer">
+      Copyright &copy; 2020
+    </footer>
+
+
+{% endblock %}
