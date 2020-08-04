@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+<section class="new" style="height: 30%;width: 100%;margin-top: 5%;">
+  <h2 style="margin-left: 40%;">Back Pain Predictor</h2>
+  <h5 style="margin-left: 37%;">A Machine Learning Algorithm That Predict Back Pain Patient</h5>
+</section>
+
+
+
+{% if y_pred=='Normal' %}
+
+<div id="content">
+  <h1 style="color: green;">Great You Don't Have Back Pain Symptoms</h1>
+</div>
+
+
+{% endif %}
+
+{% if y_pred=='Abnormal' %}
+
+<h1 style="color: red;">You have Back Pain Symptoms</h1>
+
+{% endif %}
+
+
+
+{% endblock %}

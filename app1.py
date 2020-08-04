@@ -32,7 +32,6 @@ def diabetes():
 
 
 
-
 @app.route("/heart",methods=["GET","POST"])
 def heart():
 	if request.method=='GET':
@@ -86,6 +85,7 @@ def liver():
 		return render_template('result2.html',y_pred=y_pred)
 		
 
+
 @app.route('/kidneydisease',methods=['GET','POST'])
 def kidney():
 	if request.method=='GET':
@@ -102,6 +102,37 @@ def kidney():
 		new=np.array([[Age,Blood_Pressure,Specific_Gravity,Albumin,Sugar,Red_Blood_Cells]])
 		y_pred=model.predict(new)
 		return render_template('result3.html',y_pred=y_pred)
+
+
+
+@app.route("/backpain",methods=["GET","POST"])
+def backpain():
+	if request.method=="GET":
+		return render_template("backpainform.html")
+	else:
+		pelvic_incidence=float(request.form['pelvic_incidence'])
+		pelvic_tilt=float(request.form['pelvic_tilt'])
+		lumbar_lordosis_angle=float(request.form['lumbar_lordosis_angle'])
+		sacral_slope=float(request.form['sacral_slope'])
+		pelvic_radius=float(request.form['pelvic_radius'])
+		restecgdegree_spondylolisthesis=float(request.form['restecgdegree_spondylolisthesis'])
+		pelvic_slope=float(request.form['pelvic_slope'])
+		Direct_tilt=float(request.form['Direct_tilt'])
+		thoracic_slope=float(request.form['thoracic_slope'])
+		cervical_tilt=float(request.form['cervical_tilt'])
+		sacrum_angle=float(request.form['sacrum_angle'])
+		scoliosis_slope=float(request.form['scoliosis_slope'])
+		df=pd.read_csv('Dataset_spine.csv')
+		df.columns=['pelvic_incidence','pelvic_tilt','lumbar_lordosis_angle','sacral_slope','pelvic_radius','degree_spondylolisthesis','pelvic_slope','Direct_tilt','thoracic_slope','cervical_tilt','sacrum_angle','scoliosis_slope','Class']
+		X=df.drop('Class',axis=1)
+		y=df['Class']
+		model=LogisticRegression(max_iter=120000000)
+		model.fit(X,y)
+		new=np.array([[pelvic_incidence,pelvic_tilt,lumbar_lordosis_angle,sacral_slope,pelvic_radius,restecgdegree_spondylolisthesis,pelvic_slope,Direct_tilt,thoracic_slope,cervical_tilt,sacrum_angle,scoliosis_slope]])
+		y_pred=model.predict(new)
+		return render_template("backpainresult.html",y_pred=y_pred)
+
+
 
 
 

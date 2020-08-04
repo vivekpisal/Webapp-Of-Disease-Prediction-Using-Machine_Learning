@@ -1,0 +1,59 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+
+<section class="new" style="height: 30%;width: 100%; margin-top: 5%;">
+  <h2 style="margin-left: 40%;">Back Pain Predictor</h2>
+  <h5 style="margin-left: 35%;">A Machine Learning Algorithm That Back Pain Disease Patient</h5>
+</section>
+
+
+<form method="post" style="margin-left: 15%;margin-top: 5%;">
+	<br>
+
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Pelvic Incidence (range: 26 to 129)" step="0.01" name="pelvic_incidence" required>
+  </div>
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Pelvic Tilt (range: -6 to 47)" step="0.01" name="pelvic_tilt" required>
+  </div>
+
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Lumbar Lordosis Angle (range: 14 to 125)" step="0.01" name="lumbar_lordosis_angle" required>
+  </div>
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Sacral Slope (range: 17 to 121) " step="0.01" name="sacral_slope" required>
+  </div>
+ <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Pelvic Radius  (range: 70 to 157) " step="0.01" name="pelvic_radius" required>
+  </div>
+ <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Degree Spondylolisthesis  (range: -11 to 138) " step="0.01" name="restecgdegree_spondylolisthesis" required>
+  </div>
+   <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Pelvic Slope (range: 0.03 to 0.97) " step="0.01" name="pelvic_slope" required>
+  </div>
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Direct Tilt (range: 7 to 36) " step="0.01" name="Direct_tilt" required>
+  </div>
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Thoracic Slope (range: 7 to 19) " step="0.01" name="thoracic_slope" required>
+  </div>
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Cervical Tilt (range: 7 to 16) " step="0.01" name="cervical_tilt" required>
+  </div>
+   <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Sacrum Angle (range: -35 to 6) " step="0.01" name="sacrum_angle" required>
+  </div>
+   <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Scoliosis Slope  (range: 7 to 44) " step="0.01" name="scoliosis_slope" required>
+  </div>
+
+
+  </div>
+
+  <button type="submit" class="btn btn-outline-primary" style="margin-left:20%;height: 40px;width: 20%;">Predict</button>
+</form>
+
+{% endblock %}

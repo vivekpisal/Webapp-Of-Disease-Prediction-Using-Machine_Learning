@@ -7,7 +7,7 @@
 
 
 <section class="new" style="height: 30%;width: 100%;margin-top: 5%;">
-  <h2 style="margin-left: 40%;">Kidney Disease Webapp</h2>
+  <h2 style="margin-left: 40%;">Kidney Disease Predictor</h2>
   <h5 style="margin-left: 37%;">A Machine Learning Algorithm That Predict Kidney Disease Patient</h5>
 </section>
 
@@ -16,14 +16,14 @@
 {% if y_pred==0 %}
 
 <div id="content">
-<h1 style="color: green;color: red;margin-left: 25%;margin-top: 15%;">Great You Don't Have Kidney Disease</h1>
+<h1 style="color: green;color: red;margin-left: 25%;margin-top: 15%;">Great You Don't Have Kidney Disease Symptoms</h1>
 </div>
 
 
 {% endif %}
 {% if y_pred==1 %}
 
-<h1 style="color: red;margin-left: 25%;margin-top: 15%;">You have Kidney Disease</h1>
+<h1 style="color: red;margin-left: 25%;margin-top: 15%;">You have Kidney Disease Symptoms</h1>
 
 {% endif %}
 
