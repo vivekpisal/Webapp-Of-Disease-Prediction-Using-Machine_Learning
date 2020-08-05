@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+<section class="new" style="height: 30%;width: 100%;margin-top: 5%;">
+  <h2 style="margin-left: 40%;">Tuberculosis Prediction Predictor</h2>
+  <h5 style="margin-left: 37%;">A Machine Learning Algorithm That Predict Tuberculosis Patient</h5>
+</section>
+
+
+
+{% if y_pred==0 %}
+
+<div id="content">
+  <h1 style="color: green;">Great You Don't Have Tuberculosis Symptoms</h1>
+</div>
+
+
+{% endif %}
+
+{% if y_pred==1 %}
+
+<h1 style="color: red;">You have Tuberculosis Symptoms</h1>
+
+{% endif %}
+
+
+
+{% endblock %}

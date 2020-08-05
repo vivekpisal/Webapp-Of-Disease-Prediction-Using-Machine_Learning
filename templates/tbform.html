@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<section class="new" style="height: 30%;width: 100%; margin-top: 5%;">
+  <h2 style="margin-left: 40%;">Tuberculosis Prediction Predictor</h2>
+  <h5 style="margin-left: 37%;">A Machine Learning Algorithm That Predict Tuberculosis Patient</h5>
+</section>
+
+
+<form method="post" style="margin-left: 15%;margin-top: 10%;">
+	<br>
+
+  <div class="form-check">
+    Fatigue:
+  <input type="radio" name="fatigue"  value="1">Yes
+  <input type="radio" name="fatigue"  value="0" required>No  
+</div>
+<br>
+<div class="form-check">
+    Weight Loss:
+  <input type="radio" name="weight_loss"  value="1">Yes
+  <input type="radio" name="weight_loss"  value="0" required>No  
+</div>
+<br>
+<div class="form-check">
+    Loss of Appetite:
+  <input type="radio" name="loss_of_appetite"  value="1">Yes
+  <input type="radio" name="loss_of_appetite"  value="0" required>No  
+</div>
+<br>
+<div class="form-check">
+    Mild Fever:
+  <input type="radio" name="mild_fever"  value="1">Yes
+  <input type="radio" name="mild_fever"  value="0" required>No  
+</div>
+<br>
+<div class="form-check">
+    Chills:
+  <input type="radio" name="chills"  value="1">Yes
+  <input type="radio" name="chills"  value="0" required>No  
+</div><br>
+<div class="form-check">
+    Sweating:
+  <input type="radio" name="sweating"  value="1">Yes
+  <input type="radio" name="sweating"  value="0" required>No  
+</div><br>
+<div class="form-check">
+    Mucoid Sputum:
+  <input type="radio" name="mucoid_sputum"  value="1">Yes
+  <input type="radio" name="mucoid_sputum"  value="0" required>No  
+</div>
+<br>
+<div class="form-check">
+    Cough:
+  <input type="radio" name="cough"  value="1">Yes
+  <input type="radio" name="cough"  value="0" required>No  
+</div>
+<br>
+<div class="form-check">
+    Chest Pain:
+  <input type="radio" name="chest_pain"  value="1">Yes
+  <input type="radio" name="chest_pain"  value="0" required>No  
+</div>
+<br>
+  <button type="submit" class="btn btn-outline-primary" style="margin-left:20%;height: 40px;width: 20%;">Predict</button>
+</form>
+
+{% endblock %}

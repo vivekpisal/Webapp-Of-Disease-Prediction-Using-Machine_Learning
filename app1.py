@@ -134,6 +134,29 @@ def backpain():
 
 
 
+@app.route("/Tuberculosis",methods=["GET","POST"])
+def tb():
+	if request.method=="GET":
+		return render_template('tbform.html')
+	else:
+		df=pd.read_csv("tb.csv")
+		X=df.drop(['prognosis','Tuberculosis','id'],axis=1)
+		y=df['Tuberculosis']
+		model=LogisticRegression()
+		model.fit(X,y)
+		fatigue=int(request.form['fatigue'])
+		weight_loss=int(request.form['weight_loss'])
+		loss_of_appetite=int(request.form['loss_of_appetite'])
+		mild_fever=int(request.form['mild_fever'])
+		chills=int(request.form['chills'])
+		sweating=int(request.form['sweating'])
+		mucoid_sputum=int(request.form['mucoid_sputum'])
+		cough=int(request.form['cough'])
+		chest_pain=int(request.form['chest_pain'])
+		new=np.array([[fatigue,weight_loss,loss_of_appetite,mild_fever,chills,sweating,mucoid_sputum,cough,chest_pain]])
+		y_pred=model.predict(new)
+		return f'{y_pred}'
+
 
 
 @app.route('/about')
